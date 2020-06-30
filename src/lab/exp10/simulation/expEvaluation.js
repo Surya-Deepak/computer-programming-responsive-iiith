@@ -520,7 +520,7 @@ window.view = {
 		else if ( selectedOption === 'Bitwise' )
 			this.setEnvironment( 3, 2, 0, 1, 'bitwise', 'a | b & c ^ d' )
 		else
-			this.setEnvironment( 2, 5, 10, 11, 'arithmatic', 'a + b - c' )
+			this.setEnvironment( 2, 5, 10, 11, 'arithmatic', 'a * ( b / c )' )
 	},
 	setSelectedEquation: function (id) {
 		var list = document.getElementById(id)
