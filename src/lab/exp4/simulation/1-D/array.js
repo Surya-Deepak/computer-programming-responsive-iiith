@@ -51,6 +51,8 @@ window.view = {
 		this.addClickEvent('btnOk', function() { view.proceedToStartButton() })
 		this.addClickEvent('btnStart', function() { view.displayElements() })
 		this.addClickEvent('btnNext', function() { view.sortArray() })
+		this.addClickEvent('btnRandom',function() {document.getElementById('userInput').disabled = true })
+		this.addClickEvent('btnManual',function() {document.getElementById('userInput').disabled = false })
 	},
 	proceedToStartButton: function() {
 		var userInput = this.getArraySize()
@@ -84,7 +86,10 @@ window.view = {
 	takeInputFromRadioBox: function() {
 		var element = document.getElementsByName('radio_group')
 		if ( element[0].checked )
+		{
 			this.generateRandomNumbers()
+			this.disableButton('userInput')
+		}
 		else if (element[1].checked)
 			this.getUserInput()
 	},
