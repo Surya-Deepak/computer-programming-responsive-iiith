@@ -35,6 +35,7 @@ window.view = {
 	getInput: function() {
 		var inputValue = document.getElementById('simpleLoopInput').value
 		model.inp = Number(inputValue)
+
 		this.clearExecutionSection()
 	},
 	getNestedInput: function() {
@@ -164,6 +165,11 @@ window.view = {
 	},
     startBtn: function() {
     	this.getInput()
+    	if(model.inp < 0 || model.inp > 20)
+    	{
+    		alert('Please Enter a value in the range of  0 and 20')
+    		return;
+    	}
     	this.clearDivs()
     	var selected_loop = this.getSelectedLoop()
 		var inputValue = document.getElementById('simpleLoopInput').value
